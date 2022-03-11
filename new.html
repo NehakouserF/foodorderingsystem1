@@ -1,0 +1,227 @@
+<html>
+<head>
+<title> Form </title>
+<script>
+function formValidation()
+{
+var uname = document.getElementById("name")
+var uphone = document.getElementById("phone")
+var uemail = document.getElementById("email")
+var uadd = document.getElementById("address")
+var ucity = document.getElementById("city")
+var upin = document.getElementById("pin")
+var passid = document.getElementById("passid")
+var cpassid = document.getElementById("cpassid")
+if(allLetter(uname))
+{
+if(allnumeric(uphone))
+{
+if(ValidateEmail(uemail))
+{
+if(alphanumeric(uadd))
+{
+if(allLetter(ucity))
+{
+if(allnumeric(upin))
+{
+if(passid_validation(passid,7,12))
+{
+if(cpassid_validation(cpassid,7,12))
+{
+return true;
+}
+}
+}
+}
+}
+}
+}
+}
+return false;
+}
+function allLetter(uname)
+{
+var letters=/^[A-Za-z]+$/;
+if(uname.value=="")
+{
+alert('Name should not be empty');
+}
+else if(uname.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Name must have alphabets only');
+uname.value="";
+uname.focus();
+return false;
+}
+}
+function allnumeric(uphone)
+{
+var numbers=/^[0-9]+$/;
+if(uphone.value=="")
+{
+alert('Phone should not be empty');
+}
+else if(uphone.value.match(numbers))
+{
+return true;
+}
+else
+{
+alert('Phone must have only numbers');
+uphone.value="";
+uphone.focus();
+return false;
+}
+}
+function ValidateEmail(uemail)
+{
+var mailformat=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+([a-zA-Z0-9]{2,4})+$/;
+if(uemail.value=="")
+{
+alert('Email should not be empty');
+}
+else if(uemail.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert('Please enter a valid Email');
+uemail.value="";
+uemail.focus();
+return false;
+}
+}
+function alphanumeric(uadd)
+{
+var letters=/^[0-9a-zA-Z]+$/;
+if(uadd.value=="")
+{
+alert('Address should not be empty');
+}
+else if(uadd.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Please enter a valid address with alphanumeric characters');
+uadd.value="";
+uadd.focus();
+return false;
+}
+}
+function allLetter(ucity)
+{
+var letters=/^[A-Za-z]+$/;
+if(ucity.value=="")
+{
+alert('City should not be empty');
+}
+else if(ucity.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Please enter a valid city');
+ucity.value="";
+ucity.focus();
+return false;
+}
+}
+function allnumeric(upin)
+{
+var numbers=/^[0-9]+$/;
+if(upin.value=="")
+{
+alert('PIN should not be empty');
+}
+else if(upin.value.match(numbers))
+{
+return true;
+}
+else
+{
+alert('PIN must have only numbers');
+upin.value="";
+upin.focus();
+return false;
+}
+}
+function passid_validation(passid,mx,my)
+{
+var passid_len=passid.value.length;
+if(passid_len==0 ||passid_len>=my ||passid_len<mx)
+{
+alert("Password should not be empty / length be between "+mx+" to "+my);
+passid.focus()
+return false;
+}
+return true;
+}
+</script>
+<style>
+.button {
+  background-color: #e7e7e7;
+  border:2px solid #555555;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+.button5 {border-radius: 70%;}
+</style>
+</head>
+<body onload="document.registration.userid.focus();" bgcolor="grey">
+<h1 align=center>New User Registration Form</h1>
+<form method="post" id="registration" action="dd.html" onSubmit="return formValidation();">
+<table border=0 align=center>
+<tr>
+<td><label for="name">Name:</label>
+<td><input type="text" id="name" name="name" >
+</tr>
+<tr>
+<td><label for="phone">Phone:</label>
+<td><input type="text" id="phone" name="phone" size="10">
+</tr>
+<tr>
+<td><label for="email">Email:</label>
+<td><input type="text" id="email" name="email" size="50">
+</tr>
+<tr>
+<td><label for="add">Address:</label>
+<td><input type="text" id="add" name="add" size="50">
+</tr>
+<tr>
+<td><label for="city">City:</label>
+<td><input type="text" id="city" name="city">
+</tr>
+<tr>
+<td><label for="pin">PINcode:</label>
+<td><input type="text" id="PIN" name="pin" size="6">
+</tr>
+<tr>
+<td><label for="passid">Password:</label>
+<td><input type="password" id="passid" name="password" >
+</tr>
+<tr>
+<td><label for="confpass">Confirm Password:</label>
+<td><input type="password" id="confpass" name="confirmpassword">
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" name="submit" value="submit" onclick=formValidation()/>
+</tr>
+</table>
+
+</body>
+</html>

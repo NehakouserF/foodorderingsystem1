@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+        <title>Customer Profile::Cola Online Food Ordering</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href=images/icon.png type="image/png">
+		<link rel="stylesheet" type="text/css" href="ext.css"/>
+        <style>
+           .container p {
+                color: white;
+            }
+            .container {
+                background-color: brown;
+                color: white;
+                height: auto;
+                width: 330px;
+                border: 2px solid black;
+                border-radius: 4px;
+                box-shadow: 2px 4px 2px grey;
+            }
+.button {
+  background-color: #e7e7e7;
+  border:2px solid #555555;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+.button5 {border-radius: 70%;}
+        </style>
+        <script>
+            function show()
+            {
+               var var1 = document.getElementById("phnnum").value;
+               var var2 = document.getElementById("password").value;
+               alert("Welcome Application no: "+var1+" Customer Name: "+var2);
+            }
+            
+            document.getElementById("mybtn").addEventListener("click", myFunction);
+            function myFunction() {
+    alert ("Hello Customer...Welcome to Cola Online Food Ordering");
+}
+            
+            </script>
+    </head>
+    <body align="center">
+       
+            <h1 style="color:red">COLA ONLINE FOOD ORDERING</h1>
+<br/>
+<br/>
+<h4 style="color:violet">Check Your Profile</h4>
+<h5 style="color:brown">Already a user?Login here...</h5>
+<form method="get" action="fooditem.html">
+        <table align="center">
+            <tr>
+                <td><p>Mobile Number : </p></td><td><input type="text" name="mobileno" id="phnno" placeholder="Enter Your Mobile Number" required/> </td>
+            </tr>
+            <tr>
+                <td><p>Password : </p></td><td><input type="password" name="password" id="password" placeholder="Enter your Password" required/> </td>
+            </tr>
+            
+        </table>
+            <br/>
+            <center><input type="submit" name="submit" value="Proceed to order food items" onclick=show()/>
+        </form>
+        </div>
+        <br/>
+        <center><a href="new.html"><u>New User -- Click Here</u></a>
+    </center>
+        <br/>
+    <br/>
+    </form>
+    </div>
+    </body>
+</html>

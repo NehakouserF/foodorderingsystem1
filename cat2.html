@@ -1,0 +1,51 @@
+<html>
+ <body bgcolor="powderblue" align="center">
+<form>
+ <script>
+
+function change()
+{
+var cid=document.getElementById("book").selectedIndex; 
+var val = document.getElementById("book").options[cid].text; 
+window.location.replace("http://localhost:8080/examples/jsp/dependentDropdown.jsp? id="+cid+"&&value="+val); 
+}
+ 
+function extract()
+{ 
+var ide=document.getElementById("info").selectedIndex; 
+var bookname = document.getElementById("info").options[ide].text; 
+window.location.replace("http://localhost:8080/examples/jsp/dependentDropdown.jsp? book="+bookname); 
+} 
+
+</script> 
+<table border="1" align="center"> 
+<tr>
+<td>Book ID</td>
+<td><input type="text" value="<Book ID>"></td>
+</tr> 
+<tr>
+<td>Book Name</td>
+<td><input type="text" value="<Book Name>"></td>
+</tr>
+ <tr><td>Category</td>
+<td> <select name="Category">           
+     <option value="Journal">Journal</option>       
+       <option value="Story Book">Story Books</option>       
+         <option value="literatures">Literatures</option> 
+<tr>
+<td>Author</td>
+<td><input type="text" value="<Author>"></td>
+</tr> 
+<tr>
+<td>Price</td>
+<td><input type="text" value="<Price>"></td>
+</tr> 
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="submit">
+</td>
+</tr>
+</table> 
+</body> 
+</form> 
+</html>
